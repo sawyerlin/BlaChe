@@ -3,3 +3,5 @@ typings
 *.log
 *.js
 *.map
+*.swo
+*.swp
