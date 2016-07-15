@@ -2,11 +2,11 @@ import { Injectable } from "@angular/core";
 import { Headers, Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from "./hero";
+import { Car } from "./car";
 
 @Injectable()
-export class HeroService {
-    private heroesUrl = 'app/heroes';
+export class CarService {
+    private carsUrl = 'app/cars';
 
     constructor(private http: Http) {}
 
@@ -15,46 +15,46 @@ export class HeroService {
         return Promise.reject(error.message || error);
     }
 
-    getHeroes(): Promise<Hero[]> {
-        return this.http.get(this.heroesUrl)
+    getCars(): Promise<Car[]> {
+        return this.http.get(this.carsUrl)
             .toPromise()
             .then(response=>response.json().data)
             .catch(this.handleError);
     }
-    getHero(id: number) {
-        return this.getHeroes().then(heroes=>heroes.find(hero=>hero.id == id));
+    getCar(id: number) {
+        return this.getCars().then(cars=>cars.find(car=>car.id == id));
     }
 
-    post(hero: Hero): Promise<Hero> {
+    post(car: Car): Promise<Car> {
         let headers = new Headers({
             'Content-Type': 'application/json'
         });
 
         return this.http
-            .post(this.heroesUrl, JSON.stringify(hero), {headers: headers})
+            .post(this.carsUrl, JSON.stringify(car), {headers: headers})
             .toPromise()
             .then(res=>res.json().data)
             .catch(this.handleError);
     }
 
-    put(hero: Hero) {
+    put(car: Car) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.heroesUrl}/${hero.id}`;
+        let url = `${this.carsUrl}/${car.id}`;
 
         return this.http
-            .put(url, JSON.stringify(hero), {headers: headers})
+            .put(url, JSON.stringify(car), {headers: headers})
             .toPromise()
-            .then(()=>hero)
+            .then(()=>car)
             .catch(this.handleError);
     }
 
-    delete(hero: Hero) {
+    delete(car: Car) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.heroesUrl}/${hero.id}`;
+        let url = `${this.carsUrl}/${car.id}`;
 
         return this.http
             .delete(url, headers)
@@ -62,10 +62,10 @@ export class HeroService {
             .catch(this.handleError);
     }
 
-    save(hero: Hero): Promise<Hero> {
-        if (hero.id) {
-            return this.put(hero);
+    save(car: Car): Promise<Car> {
+        if (car.id) {
+            return this.put(car);
         }
-        return this.post(hero);
+        return this.post(car);
     }
 }

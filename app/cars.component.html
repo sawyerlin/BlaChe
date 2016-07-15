@@ -1,0 +1,20 @@
+<h2>My Cars</h2>
+<ul class="cars">
+    <li *ngFor="let car of cars"
+    [class.selected]="car === selectedCar"
+    (click)="onSelect(car)">
+        <span class="badge">{{car.id}}</span> {{car.name}}
+        <button class="delete-button" (click)="deleteCar(car, $event)">Delete</button>
+    </li>
+</ul>
+<div class="error" *ngIf="error">{{error}}</div>
+<button (click)="addCar()">Add New Car</button>
+<div *ngIf="addingCar">
+    <my-car-detail (close)="close($event)"></my-car-detail>
+</div>
+<div *ngIf="selectedCar">
+    <h2>
+        {{selectedCar.name | uppercase}} is my car
+    </h2>
+    <button (click)=gotoDetail()>View Details</button>
+</div>

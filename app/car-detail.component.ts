@@ -1,32 +1,32 @@
 import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from  '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Car } from './car';
+import { CarService } from './car.service';
 
 @Component ({
-    selector: 'my-hero-detail',
-    templateUrl: 'app/hero-detail.component.html',
-    styleUrls: ['app/hero-detail.component.css']
+    selector: 'my-car-detail',
+    templateUrl: 'app/car-detail.component.html',
+    styleUrls: ['app/car-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit, OnDestroy {
-    @Input() hero: Hero;
+export class CarDetailComponent implements OnInit, OnDestroy {
+    @Input() car: Car;
     @Output() close = new EventEmitter();
     error: any;
     sub: any;
     navigated = false;
 
     constructor(
-        private heroService: HeroService,
+        private carService: CarService,
         private route: ActivatedRoute) {
     }
 
     save() {
-        this.heroService
-            .save(this.hero)
-            .then(hero => {
-                this.hero = hero;
-                this.goBack(hero);
+        this.carService
+            .save(this.car)
+            .then(car => {
+                this.car = car;
+                this.goBack(car);
             })
             .catch(error => this.error = error);
     }
@@ -36,11 +36,11 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
             if (params["id"] !== undefined) {
                 let id = +params["id"];
                 this.navigated = true;
-                this.heroService.getHero(id)
-                    .then(hero=>this.hero = hero);
+                this.carService.getCar(id)
+                    .then(car=>this.car = car);
             } else {
                 this.navigated = false;
-                this.hero = new Hero();
+                this.car = new Car();
             }
         });
     }
@@ -49,8 +49,8 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this.sub.unsubscribe();
     }
 
-    goBack(savedHero: Hero = null) {
-        this.close.emit(savedHero);
+    goBack(savedCar: Car = null) {
+        this.close.emit(savedCar);
         if (this.navigated) { window.history.back(); }
     }
 }
