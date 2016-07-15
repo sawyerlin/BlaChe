@@ -14,7 +14,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     @Output() close = new EventEmitter();
     error: any;
     sub: any;
-    navgated = false;
+    navigated = false;
 
     constructor(
         private heroService: HeroService,

@@ -12,10 +12,10 @@ import { HeroDetailComponent } from './hero-detail.component';
     directives: [HeroDetailComponent]
 })
 export class HeroesComponent implements OnInit {
-    title = 'BlaChe';
-    error: any;
     heroes: Hero[];
     selectedHero: Hero;
+    addingHero = false;
+    error: any;
 
     constructor(
         private router: Router,
