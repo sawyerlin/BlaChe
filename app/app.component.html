@@ -1,5 +1,6 @@
-<h1>{{title}}</h1>
+<blache-header [logo]="logo"></blache-header>
 <nav>
+    <a [routerLink]="['/home']" routerLinkActive="true">Home</a>
     <a [routerLink]="['/cars']" routerLinkActive="true">Cars</a>
     <a [routerLink]="['/dashboard']" routerLinkActive="true">Dashboard</a>
 </nav>
