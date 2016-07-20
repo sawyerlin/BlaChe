@@ -6,13 +6,19 @@ import { Router } from "@angular/router";
     templateUrl: "app/homeComponent/home.component.html"
 })
 export class HomeComponent implements OnInit {
-    title: string = "Find Car";
-    @Input() fromDate: Date;
-    @Input() toDate: Date;
+    title: string = "Find Cars";
+    @Input() from: string = "";
+    @Input() to: string = "";
+    @Input() selectedDate: Date;
 
-    ngOnInit() {
-        var today = new Date(Date.now());
-        this.fromDate = today;
-        this.toDate = today;
+    constructor(private router: Router) {}
+
+    ngOnInit() {}
+
+    findCar() {
+        this.router.navigate(['/search', this.selectedDate, {
+            from: this.from,
+            to: this.to
+        }]);
     }
 }

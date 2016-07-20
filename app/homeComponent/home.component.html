@@ -1,13 +1,21 @@
 <h1>{{title}}</h1>
 
 <div>
-    <label>From {{fromDate}}</label>
+    <label>From {{from}}</label>
     <br/>
-    <input [(ngModel)]="fromDate">
+    <input [(ngModel)]="from">
 </div>
 
 <div>
-    <label>From {{toDate}}</label>
+    <label>To {{to}}</label>
     <br/>
-    <input [(ngModel)]="toDate">
+    <input [(ngModel)]="to">
 </div>
+
+<div>
+    <label>Date {{selectedDate}}</label>
+    <br/>
+    <input type="date" [(ngModel)]="selectedDate">
+</div>
+
+<button (click)="findCar()">Find</button>
