@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
     @Input() toDate: Date;
 
     ngOnInit() {
-        var today = Date.now();
+        var today = new Date(Date.now());
         this.fromDate = today;
         this.toDate = today;
     }
