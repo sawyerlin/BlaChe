@@ -5,12 +5,7 @@
     <h3>to: {{to}}</h3>
     <ul>
         <li *ngFor="let item of items">
-            <span>{{item.id}}</span>
-            <span>{{item.providerName}}</span>
-            <span>{{item.date}}</span>
-            <span>{{item.from}}</span>
-            <span>{{item.to}}</span>
-            <span>{{item.price | currency:"EUR":true}}</span>
+            <blache-search-item [item]="item"></blache-search-item>
         </li>
     </ul>
 </div>

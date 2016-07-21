@@ -3,10 +3,12 @@ import { ActivatedRoute } from "@angular/router";
 
 import { SearchItem } from "./search-item";
 import { SearchService } from "./search.service";
+import { SearchItemComponent } from "./search-item.component";
 
 @Component({
     selector: "blache-search",
-    templateUrl: "app/searchComponent/search.component.html"
+    templateUrl: "app/searchComponent/search.component.html",
+    directives: [SearchItemComponent]
 })
 export class SearchComponent implements OnInit {
     title: string = "Search Cars";
