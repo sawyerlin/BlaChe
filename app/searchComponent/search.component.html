@@ -1,6 +1,16 @@
 <h1>{{title}}</h1>
 <div>
-    <h3>{{date}}</h3>
-    <h3>{{from}}</h3>
-    <h3>{{to}}</h3>
+    <h3>search date: {{date}}</h3>
+    <h3>from: {{from}}</h3>
+    <h3>to: {{to}}</h3>
+    <ul>
+        <li *ngFor="let item of items">
+            <span>{{item.id}}</span>
+            <span>{{item.providerName}}</span>
+            <span>{{item.date}}</span>
+            <span>{{item.from}}</span>
+            <span>{{item.to}}</span>
+            <span>{{item.price | currency:"EUR":true}}</span>
+        </li>
+    </ul>
 </div>

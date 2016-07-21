@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { CarService } from "./car.service";
+import { SearchService } from "./searchComponent/search.service";
 import { HeaderComponent }  from "./headerComponent/header.component";
 
 @Component({
@@ -9,7 +10,7 @@ import { HeaderComponent }  from "./headerComponent/header.component";
     templateUrl: "app/app.component.html",
     styleUrls: ["app/app.component.css"],
     directives: [ROUTER_DIRECTIVES, HeaderComponent],
-    providers: [CarService]
+    providers: [CarService, SearchService]
 })
 export class AppComponent {
     logo: string = 'Blache'
