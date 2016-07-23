@@ -5,6 +5,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { CarDetailComponent } from './car-detail.component';
 import { HomeComponent } from './homeComponent/home.component';
 import { SearchComponent } from './searchComponent/search.component';
+import { SigninComponent } from './signComponent/sign-in.component';
 
 const routes: RouterConfig = [
     {
@@ -31,7 +32,11 @@ const routes: RouterConfig = [
     {
         path: "search/:date",
         component: SearchComponent
-    }
+    },
+    {
+        path: "signin",
+        component: SigninComponent
+    },
 ];
 
 export const appRouterProviders = [
