@@ -1,8 +1,8 @@
 import { provideRouter, RouterConfig } from "@angular/router";
 
-import { CarsComponent } from "./cars.component";
+import { AnnoncementsComponent } from "./annoncementsComponent/annoncements.component";
 import { DashboardComponent } from "./dashboard.component";
-import { CarDetailComponent } from './car-detail.component';
+import { CarDetailComponent } from './annoncementsComponent/car-detail.component';
 import { HomeComponent } from './homeComponent/home.component';
 import { SearchComponent } from './searchComponent/search.component';
 import { SigninComponent } from './signComponent/sign-in.component';
@@ -22,8 +22,8 @@ const routes: RouterConfig = [
         component: DashboardComponent
     },
     {
-        path: "cars",
-        component: CarsComponent
+        path: "annoncements",
+        component: AnnoncementsComponent
     },
     {
         path: "detail/:id",

@@ -6,8 +6,8 @@ import { CarService } from './car.service';
 
 @Component ({
     selector: 'my-car-detail',
-    templateUrl: 'app/car-detail.component.html',
-    styleUrls: ['app/car-detail.component.css']
+    templateUrl: 'app/annoncementsComponent/car-detail.component.html',
+    styleUrls: ['app/annoncementsComponent/car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit, OnDestroy {
     @Input() car: Car;

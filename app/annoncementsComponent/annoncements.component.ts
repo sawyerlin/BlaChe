@@ -6,12 +6,12 @@ import { CarService } from './car.service';
 import { CarDetailComponent } from './car-detail.component';
 
 @Component({
-    selector: 'my-cars',
-    templateUrl: 'app/cars.component.html',
-    styleUrls: ['app/cars.component.css'],
+    selector: 'blache-annoncements',
+    templateUrl: 'app/annoncementsComponent/annoncements.component.html',
+    styleUrls: ['app/annoncementsComponent/annoncements.component.css'],
     directives: [CarDetailComponent]
 })
-export class CarsComponent implements OnInit {
+export class AnnoncementsComponent implements OnInit {
     cars: Car[];
     selectedCar: Car;
     addingCar= false;

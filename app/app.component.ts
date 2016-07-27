@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from "@angular/router";
 
-import { CarService } from "./car.service";
+import { CarService } from "./annoncementsComponent/car.service";
 import { SearchService } from "./searchComponent/search.service";
 import { HeaderComponent }  from "./headerComponent/header.component";
 

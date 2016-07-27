@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Car } from "./car";
-import { CarService } from "./car.service";
+import { Car } from "./annoncementsComponent/car";
+import { CarService } from "./annoncementsComponent/car.service";
 
 @Component({
     selector: "my-dashboard",
