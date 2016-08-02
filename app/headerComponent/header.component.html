@@ -1,3 +1,11 @@
-<a [routerLink]="['/home']" routerLinkActive="true">{{logo}}</a>
-<a [routerLink]="['/signin']" routerLinkActive="true">Sign In</a>
-<a [routerLink]="['/signup']" routerLinkActive="true">Sign Up</a>
+<ul class="nav nav-pills">
+    <li role="presentation" class="text-left">
+        <a [routerLink]="['/home']" routerLinkActive="true">{{logo}}</a>
+    <li>
+    <li role="presentation" class="text-right">
+        <a [routerLink]="['/signin']" routerLinkActive="true">Sign In</a>
+    </li>
+    <li role="presentation" class="text-right">
+        <a [routerLink]="['/signup']" routerLinkActive="true">Sign Up</a>
+    </li>
+</ul>

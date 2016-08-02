@@ -1,8 +1,20 @@
-<blache-header [logo]="logo"></blache-header>
-<nav>
-    <a [routerLink]="['/dashboard']" routerLinkActive="true">Dashboard</a>
-    <a [routerLink]="['/annoncements']" routerLinkActive="true">Annoncements</a>
-    <a [routerLink]="['/reservations']" routerLinkActive="true">Reservations</a>
-    <a [routerLink]="['/messages']" routerLinkActive="true">Messages</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="container">
+    <blache-header [logo]="logo"></blache-header>
+    <ul class="nav nav-tabs">
+        <li role="presntation" [routerLinkActive]="['active']">
+            <a [routerLink]="['/dashboard']" routerLinkActive="true">Dashboard</a>
+        </li>
+        <li role="presntation" [routerLinkActive]="['active']">
+            <a [routerLink]="['/annoncements']" routerLinkActive="true">Annoncements</a>
+        </li>
+        <li role="presntation" [routerLinkActive]="['active']">
+            <a [routerLink]="['/reservations']" routerLinkActive="true">Reservations</a>
+        </li>
+        <li role="presntation" [routerLinkActive]="['active']">
+            <a [routerLink]="['/messages']" routerLinkActive="true">Messages</a>
+        </li>
+    </ul>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

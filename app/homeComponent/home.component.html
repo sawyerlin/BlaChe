@@ -1,21 +1,17 @@
-<h1>{{title}}</h1>
-
-<div>
-    <label>From {{from}}</label>
-    <br/>
-    <input [(ngModel)]="from">
+<img src="images/backgrounds/home.jpg" width="100%"/>
+<div id="home">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <input id="from" class="form-control" [(ngModel)]="from" placeholder="from">
+    </div>
+    <div class="col-md-3">
+        <input id="to" class="form-control" [(ngModel)]="to" placeholder="to">
+    </div>
+    <div class="col-md-3">
+        <input id="date" class="form-control" type="date" [(ngModel)]="selectedDate" placeholder="date">
+    </div>
+    <div class="col-md-1">
+        <button (click)="findCar()" class="btn btn-default">Find</button>
+    </div>
+    <div class="col-md-1"></div>
 </div>
-
-<div>
-    <label>To {{to}}</label>
-    <br/>
-    <input [(ngModel)]="to">
-</div>
-
-<div>
-    <label>Date {{selectedDate}}</label>
-    <br/>
-    <input type="date" [(ngModel)]="selectedDate">
-</div>
-
-<button (click)="findCar()">Find</button>

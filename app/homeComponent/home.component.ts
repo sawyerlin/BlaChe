@@ -3,10 +3,10 @@ import { Router } from "@angular/router";
 
 @Component({
     selector: "blache-home",
-    templateUrl: "app/homeComponent/home.component.html"
+    templateUrl: "app/homeComponent/home.component.html",
+    styleUrls: ['app/homeComponent/home.component.css'],
 })
 export class HomeComponent implements OnInit {
-    title: string = "Find Cars";
     @Input() from: string = "";
     @Input() to: string = "";
     @Input() selectedDate: Date;
