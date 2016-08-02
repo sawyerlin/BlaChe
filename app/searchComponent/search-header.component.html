@@ -1,0 +1,18 @@
+<div id="search-header">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <input id="from" class="form-control" [(ngModel)]="from" placeholder="from">
+        </div>
+        <div class="col-md-3">
+            <input id="to" class="form-control" [(ngModel)]="to" placeholder="to">
+        </div>
+        <div class="col-md-3">
+            <input id="date" class="form-control" type="date" [(ngModel)]="selectedDate" placeholder="date">
+        </div>
+        <div class="col-md-1">
+            <button (click)="findCar()" class="btn btn-default">Find</button>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

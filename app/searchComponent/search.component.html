@@ -1,8 +1,5 @@
-<h1>{{title}}</h1>
 <div>
-    <h3>search date: {{date}}</h3>
-    <h3>from: {{from}}</h3>
-    <h3>to: {{to}}</h3>
+    <blache-search-header [from]="from" [to]="to" [selectedDate]="date"></blache-search-header>
     <ul>
         <li *ngFor="let item of items">
             <blache-search-item [item]="item"></blache-search-item>

@@ -1,24 +1,11 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component } from "@angular/core";
+
+import { SearchHeaderComponent } from "../searchComponent/search-header.component";
 
 @Component({
     selector: "blache-home",
     templateUrl: "app/homeComponent/home.component.html",
-    styleUrls: ['app/homeComponent/home.component.css'],
+    styleUrls: ["app/homeComponent/home.component.css"],
+    directives: [SearchHeaderComponent]
 })
-export class HomeComponent implements OnInit {
-    @Input() from: string = "";
-    @Input() to: string = "";
-    @Input() selectedDate: Date;
-
-    constructor(private router: Router) {}
-
-    ngOnInit() {}
-
-    findCar() {
-        this.router.navigate(['/search', this.selectedDate, {
-            from: this.from,
-            to: this.to
-        }]);
-    }
-}
+export class HomeComponent implements OnInit {}

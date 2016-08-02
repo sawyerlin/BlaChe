@@ -4,18 +4,19 @@ import { ActivatedRoute } from "@angular/router";
 import { SearchItem } from "./search-item";
 import { SearchService } from "./search.service";
 import { SearchItemComponent } from "./search-item.component";
+import { SearchHeaderComponent } from "./search-header.component";
 
 @Component({
     selector: "blache-search",
     templateUrl: "app/searchComponent/search.component.html",
-    directives: [SearchItemComponent]
+    directives: [SearchItemComponent, SearchHeaderComponent]
 })
 export class SearchComponent implements OnInit {
-    title: string = "Search Cars";
     sub: any;
+    search: 
     date: Date;
-    from: string;
-    to: string;
+    fromPlace: string;
+    toPlace: string;
     items: SearchItem[];
 
     constructor(private route: ActivatedRoute,
