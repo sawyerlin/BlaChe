@@ -1,0 +1,21 @@
+{
+  "name": "angular2-blache",
+  "description": "",
+  "main": "",
+  "authors": [
+    "sawyerlin <sawyer.lin@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sawyerlin/BlaChe",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
