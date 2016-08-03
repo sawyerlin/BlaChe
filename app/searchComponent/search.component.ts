@@ -13,10 +13,9 @@ import { SearchHeaderComponent } from "./search-header.component";
 })
 export class SearchComponent implements OnInit {
     sub: any;
-    search: 
     date: Date;
-    fromPlace: string;
-    toPlace: string;
+    from: string;
+    to: string;
     items: SearchItem[];
 
     constructor(private route: ActivatedRoute,

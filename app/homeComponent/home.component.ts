@@ -8,4 +8,4 @@ import { SearchHeaderComponent } from "../searchComponent/search-header.componen
     styleUrls: ["app/homeComponent/home.component.css"],
     directives: [SearchHeaderComponent]
 })
-export class HomeComponent implements OnInit {}
+export class HomeComponent {}
