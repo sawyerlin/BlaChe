@@ -16,17 +16,18 @@ export class InMemoryDataService {
             return results;
         })(),
         search = (() => {
-            let results = [];
-            for (let i = 0; i < 100; i++) {
-                results.push({
-                    id: i,
-                    providerName: 'provider' + i,
-                    date: new Date(),
-                    from: 'from' + i,
-                    to: 'to' + i,
-                    price: i
-                });
-            }
+            let results = [
+            { id: 11, providerName: 'Mr. Nice', date: new Date(), from: "beijing", to: "shanghai", price: 32 },
+            { id: 12, providerName: 'Narco', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 13, providerName: 'Bombasto', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 14, providerName: 'Celeritas', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 15, providerName: 'Magneta', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 16, providerName: 'RubberMan', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 17, providerName: 'Dynama', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 18, providerName: 'Dr IQ', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 19, providerName: 'Magma', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
+            { id: 20, providerName: 'Tornado', date: new Date(), from: "beijing", to: "shanghai", price: 32  }
+            ];
             return results;
         })();
         return {cars, search};

@@ -1,5 +1,18 @@
-<span>{{item.providerName}}</span>
-<span>{{item.date | date:'short'}}</span>
-<span>{{item.from}}</span>
-<span>{{item.to}}</span>
-<span>{{item.price | currency:"EUR":true}}</span>
+<li class="media">
+    <div class="media-left media-top">
+        <div class="thumbnail">
+            <img src="images/temps/user.jpg"/>
+        </div>
+    </div>
+    <div class="media-left media-top">
+        <span class="media-top">{{item.providerName}}</span>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{item.date | date:'short'}}</h4>
+        <div class="media-left">
+            <span>{{item.from}}</span>
+            <span>{{item.to}}</span>
+        </div>
+        <div class="media-right">{{item.price | currency:"EUR":true}}</div>
+    </div>
+</li>

@@ -1,0 +1,16 @@
+li {
+    border-bottom: 1px solid #000000;
+}
+
+li span, h4 {
+    padding: 10px 0;
+}
+
+li .thumbnail {
+    margin: 10px 0;
+    width: 150px;
+}
+
+li .media-left {
+    border-right: 1px solid #000000;
+}

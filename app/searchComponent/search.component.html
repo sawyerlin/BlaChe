@@ -1,8 +1,6 @@
 <div>
     <blache-search-header [from]="from" [to]="to" [selectedDate]="date"></blache-search-header>
-    <ul>
-        <li *ngFor="let item of items">
-            <blache-search-item [item]="item"></blache-search-item>
-        </li>
+    <ul class="media-list">
+        <blache-search-item *ngFor="let item of items" [item]="item"></blache-search-item>
     </ul>
 </div>
