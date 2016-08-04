@@ -15,10 +15,19 @@ export class SearchService {
         return Promise.reject(error.message || error);
     }
 
-    search(): Promise<SearchItem[]> {
+    search(size: number, page: number): Promise<SearchItem[]> {
         return this.http.get(this.searchUrl)
             .toPromise()
-            .then(response=>response.json().data)
+            .then(response=>{
+                let searchResult = response.json().data;
+                let pageSize = Math.ceil(searchResult.size / size);
+                let items = searchResult.items.slice(page * size, (page + 1) * size);
+                return {
+                    pageSize: pageSize,
+                    page: page,
+                    items: items
+                };
+            })
             .catch(this.handleError);
     }
 }

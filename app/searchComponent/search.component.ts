@@ -17,6 +17,10 @@ export class SearchComponent implements OnInit {
     from: string;
     to: string;
     items: SearchItem[];
+    pages: number[];
+    pageSize: number;
+    page: number;
+    size = 4;
 
     constructor(private route: ActivatedRoute,
                 private searchService: SearchService) {}
@@ -26,7 +30,21 @@ export class SearchComponent implements OnInit {
             this.date = params["date"];
             this.from = params["from"];
             this.to = params["to"];
-            this.searchService.search().then(items => this.items = items);
+            this.searchService.search(this.size, 0).then(searchResult => {
+                this.items = searchResult.items;
+                this.pageSize = searchResult.pageSize;
+                this.pages = Array(this.pageSize).fill().map((x, i) => i);
+                this.page = searchResult.page;
+            });
+        });
+    }
+
+    changePage(pageNumber: number) {
+        this.searchService.search(this.size, pageNumber).then(searchResult => {
+            this.items = searchResult.items;
+            this.pageSize = searchResult.pageSize;
+            this.pages = Array(this.pageSize).fill().map((x, i) => i);
+            this.page = searchResult.page;
         });
     }
 }

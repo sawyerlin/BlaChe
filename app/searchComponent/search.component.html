@@ -3,4 +3,21 @@
     <ul class="media-list">
         <blache-search-item *ngFor="let item of items" [item]="item"></blache-search-item>
     </ul>
+    <nav aria-label="search pagination" *ngIf="pageSize > 1">
+        <ul class="pagination">
+            <li [class.disabled]="page == 0">
+                <a aria-label="Previous" (click)="changePage(0)">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li *ngFor="let pageNumber of pages" [class.active]="pageNumber == page">
+                <a (click)="changePage(pageNumber)">{{pageNumber + 1}}</a>
+            </li>
+            <li [class.disabled]="page == pageSize - 1">
+                <a aria-label="Next" (click)="changePage(pageSize - 1)">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>

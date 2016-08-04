@@ -4,15 +4,14 @@
             <img src="images/temps/user.jpg"/>
         </div>
     </div>
-    <div class="media-left media-top">
-        <span class="media-top">{{item.providerName}}</span>
-    </div>
-    <div class="media-body">
-        <h4 class="media-heading">{{item.date | date:'short'}}</h4>
-        <div class="media-left">
-            <span>{{item.from}}</span>
-            <span>{{item.to}}</span>
+    <div class="media-body media-right">
+        <div class="media-heading">
+            <h3 class="col-md-11"><strong>{{item.date | date:'short'}}</strong></h3>
+            <h3 class="col-md-1 text-success"><strong>{{item.price | currency:"EUR":true}}</strong></h3>
         </div>
-        <div class="media-right">{{item.price | currency:"EUR":true}}</div>
+        <div class="media-object">
+            <div class="col-md-12"><span class="glyphicon glyphicon-map-marker text-success"></span> {{item.from}}</div>
+            <div class="col-md-12"><span class="glyphicon glyphicon-map-marker text-danger"></span> {{item.to}}</div>
+        </div>
     </div>
 </li>

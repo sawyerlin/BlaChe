@@ -16,7 +16,7 @@ export class InMemoryDataService {
             return results;
         })(),
         search = (() => {
-            let results = [
+            let items = [
             { id: 11, providerName: 'Mr. Nice', date: new Date(), from: "beijing", to: "shanghai", price: 32 },
             { id: 12, providerName: 'Narco', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
             { id: 13, providerName: 'Bombasto', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
@@ -28,7 +28,11 @@ export class InMemoryDataService {
             { id: 19, providerName: 'Magma', date: new Date(), from: "beijing", to: "shanghai", price: 32  },
             { id: 20, providerName: 'Tornado', date: new Date(), from: "beijing", to: "shanghai", price: 32  }
             ];
-            return results;
+            let searchResult = {
+                items: items,
+                size: items.length
+            };
+            return searchResult;
         })();
         return {cars, search};
     }

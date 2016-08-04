@@ -1,16 +1,13 @@
 li {
+    cursor: hand;
     border-bottom: 1px solid #000000;
 }
 
-li span, h4 {
-    padding: 10px 0;
-}
-
 li .thumbnail {
-    margin: 10px 0;
+    margin: 10px;
     width: 150px;
 }
 
-li .media-left {
-    border-right: 1px solid #000000;
+li:hover {
+    background-color: #eff8fd;
 }
