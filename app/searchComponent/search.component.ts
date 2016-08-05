@@ -33,8 +33,8 @@ export class SearchComponent implements OnInit {
             this.searchService.search(this.size, 0).then(searchResult => {
                 this.items = searchResult.items;
                 this.pageSize = searchResult.pageSize;
-                this.pages = Array(this.pageSize).fill().map((x, i) => i);
-                this.page = searchResult.page;
+                this.pages = Array(this.pageSize).fill(this.pageSize).map((x, i) => i);
+                this.page = searchResult.currentPage;
             });
         });
     }
@@ -43,8 +43,8 @@ export class SearchComponent implements OnInit {
         this.searchService.search(this.size, pageNumber).then(searchResult => {
             this.items = searchResult.items;
             this.pageSize = searchResult.pageSize;
-            this.pages = Array(this.pageSize).fill().map((x, i) => i);
-            this.page = searchResult.page;
+            this.pages = Array(this.pageSize).fill(this.pageSize).map((x, i) => i);
+            this.page = searchResult.currentPage;
         });
     }
 }

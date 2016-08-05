@@ -3,6 +3,7 @@ import { Headers, Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 
 import { SearchItem } from "./search-item";
+import { SearchResult } from "./search-result";
 
 @Injectable()
 export class SearchService {
@@ -15,7 +16,7 @@ export class SearchService {
         return Promise.reject(error.message || error);
     }
 
-    search(size: number, page: number): Promise<SearchItem[]> {
+    search(size: number, page: number): Promise<SearchResult> {
         return this.http.get(this.searchUrl)
             .toPromise()
             .then(response=>{
@@ -24,7 +25,7 @@ export class SearchService {
                 let items = searchResult.items.slice(page * size, (page + 1) * size);
                 return {
                     pageSize: pageSize,
-                    page: page,
+                    currentPage: page,
                     items: items
                 };
             })
