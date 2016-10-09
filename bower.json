@@ -17,6 +17,7 @@
   ],
   "devDependencies": {
     "bootstrap": "^3.3.7",
-    "normalize-css": "normalize.css#^4.2.0"
+    "normalize-css": "normalize.css#^4.2.0",
+    "bootstrap-social": "~5.0.0"
   }
 }

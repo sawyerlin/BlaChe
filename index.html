@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,14 +17,15 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="//connect.facebook.net/en_US/sdk.js" id="facebook-jssdk"></script>
     <script src="systemjs.config.js"></script>
     <script>
 System.import('public').catch(function(err){ console.error(err); });
     </script>
     <my-app>
-        <div class="splashscreen">
-            Welcome your visite to Blache
-        </div>
+    <div class="splashscreen">
+        Welcome your visite to Blache
+    </div>
     </my-app>
 </body>
 </html>

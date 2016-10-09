@@ -13,5 +13,5 @@ import { HeaderComponent }  from "./headerComponent/header.component";
     providers: [CarService, SearchService]
 })
 export class AppComponent {
-    logo: string = 'Blache';
+    logo: string = "Blache";
 }

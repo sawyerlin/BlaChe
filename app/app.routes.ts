@@ -5,7 +5,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { CarDetailComponent } from './annoncementsComponent/car-detail.component';
 import { HomeComponent } from './homeComponent/home.component';
 import { SearchComponent } from './searchComponent/search.component';
-import { SigninComponent } from './signComponent/sign-in.component';
+import { LoginComponent } from './loginComponent/login.component';
 
 const routes: RouterConfig = [
     {
@@ -34,8 +34,8 @@ const routes: RouterConfig = [
         component: SearchComponent
     },
     {
-        path: "signin",
-        component: SigninComponent
+        path: "login",
+        component: LoginComponent
     },
 ];
 

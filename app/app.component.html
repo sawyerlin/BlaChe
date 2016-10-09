@@ -1,20 +1,24 @@
 <div class="container">
     <blache-header [logo]="logo"></blache-header>
     <ul class="nav nav-tabs">
-        <li role="presntation" [routerLinkActive]="['active']">
+        <li role="presentation" [routerLinkActive]="['active']">
             <a [routerLink]="['/dashboard']" routerLinkActive="true">Dashboard</a>
         </li>
-        <li role="presntation" [routerLinkActive]="['active']">
+        <li role="presentation" [routerLinkActive]="['active']">
             <a [routerLink]="['/annoncements']" routerLinkActive="true">Annoncements</a>
         </li>
-        <li role="presntation" [routerLinkActive]="['active']">
+        <li role="presentation" [routerLinkActive]="['active']">
             <a [routerLink]="['/reservations']" routerLinkActive="true">Reservations</a>
         </li>
-        <li role="presntation" [routerLinkActive]="['active']">
+        <li role="presentation" [routerLinkActive]="['active']">
             <a [routerLink]="['/messages']" routerLinkActive="true">Messages</a>
+        </li>
+        <li role="presentation" [routerLinkActive]="['active']">
+            <a (click)="facebooklogin()">facebook</a>
         </li>
     </ul>
     <div>
         <router-outlet></router-outlet>
     </div>
 </div>
+

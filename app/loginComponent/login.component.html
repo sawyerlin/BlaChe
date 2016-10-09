@@ -1,0 +1,41 @@
+<div class="col-sm-4 social-buttons">
+    <a class="btn btn-block btn-social btn-facebook" (click)="loginFacebook()">
+        <span class="fa fa-facebook"></span> Sign in with Facebook
+    </a>
+    <a class="btn btn-block btn-social btn-twitter">
+        <span class="fa fa-google"></span> Sign in with Google
+    </a>
+    <a class="btn btn-block btn-social btn-twitter">
+        <span class="fa fa-twitter"></span> Sign in with Twitter
+    </a>
+    <a class="btn btn-block btn-social btn-github">
+        <span class="fa fa-github"></span> Sign in with Github
+    </a>
+</div>
+<div class="col-sm-8">
+    <div class="form-group">
+        <label for="lastname">lastname</label>
+        <input id="lastname" type="text" class="form-control" [(ngModel)]="lastname">
+    </div>
+    <div class="form-group">
+        <label for="firstname">firstname</label>
+        <input id="firstname" type="text" class="form-control" [(ngModel)]="firstname">
+    </div>
+    <div class="form-group">
+        <label for="email">email</label>
+        <input id="email" type="email" class="form-control" [(ngModel)]="email">
+    </div>
+    <div class="form-group">
+        <label for="password">password</label>
+        <input id="password" type="password" class="form-control" [(ngModel)]="password">
+    </div>
+    <div class="form-group">
+        <label for="passwordconfirmation">password confirmation</label>
+        <input id="passwordconfirmation" type="password" class="form-control" [(ngModel)]="passwordConfirmation">
+    </div>
+    <div class="form-group">
+        <label for="birthday">birthday</label>
+        <input id="birthday" type="date" class="form-control" [(ngModel)]="birthday">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+</div>
