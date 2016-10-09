@@ -46,5 +46,6 @@ export class SearchComponent implements OnInit {
             this.pages = Array(this.pageSize).fill(this.pageSize).map((x, i) => i);
             this.page = searchResult.currentPage;
         });
+        return false; // do not reload page
     }
 }
