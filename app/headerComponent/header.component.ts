@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from "@angular/router";
 @Component({
     selector: "blache-header",
     templateUrl: "app/headerComponent/header.component.html",
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
 })
 export class HeaderComponent implements OnInit {
     @Input() logo: string;

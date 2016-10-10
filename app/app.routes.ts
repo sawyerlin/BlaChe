@@ -1,6 +1,8 @@
 import { provideRouter, RouterConfig } from "@angular/router";
 
 import { AnnoncementsComponent } from "./annoncementsComponent/annoncements.component";
+import { ReservationComponent } from "./reservationComponent/reservation.component";
+import { MessageComponent } from "./messageComponent/message.component";
 import { DashboardComponent } from "./dashboard.component";
 import { CarDetailComponent } from './annoncementsComponent/car-detail.component';
 import { HomeComponent } from './homeComponent/home.component';
@@ -37,6 +39,14 @@ const routes: RouterConfig = [
         path: "login",
         component: LoginComponent
     },
+    {
+        path: "reservation",
+        component: ReservationComponent
+    },
+    {
+        path: "message",
+        component: MessageComponent
+    }
 ];
 
 export const appRouterProviders = [

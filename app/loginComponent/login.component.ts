@@ -1,5 +1,7 @@
 import { Component, Input } from "@angular/core";
-import { FacebookService, FacebookLoginResponse, FacebookInitParams } from "ng2-facebook-sdk";
+import { Router } from '@angular/router';
+
+import { FacebookService, FacebookLoginStatus, FacebookLoginResponse, FacebookInitParams } from "ng2-facebook-sdk";
 
 @Component ({
     selector: "blache-login",
@@ -14,7 +16,9 @@ export class LoginComponent {
     @Input() passwordConfirmation: string;
     @Input() birthday: Date;
 
-    constructor(private fb: FacebookService) {
+    constructor(
+        private fb: FacebookService,
+        private router: Router) {
         let fbParams: FacebookInitParams = {
             appId: "989605347851369",
             //cookie: true,
@@ -22,11 +26,22 @@ export class LoginComponent {
             version: "v2.8"
         };
         this.fb.init(fbParams);
+        this.fb.getLoginStatus().then(
+            (loginStatus: FacebookLoginStatus) => {
+                if (loginStatus.status == "connected") {
+                    this.router.navigate(['/dashboard']);
+                }
+            }
+        );
     }
 
-    loginFacebook() {
+    loginFacebook(): void {
         this.fb.login().then(
-            (response: FacebookLoginResponse) => console.log(response),
+            (response: FacebookLoginResponse) => {
+                if (response.status == "connected") {
+                    this.router.navigate(['/dashboard']);
+                }
+            },
             (error: any) => console.log(error)
         );
     }
