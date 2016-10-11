@@ -1,0 +1,24 @@
+<ul class="nav nav-pills" [class.hide]="!isVisible">
+    <li role="presentation" class="dropdown pull-right">
+        <!--<a [routerLink]="['/login']" routerLinkActive="true">Login</a>-->
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            login <span class="caret"></span>
+        </a>
+        <div class="dropdown-menu">
+            <a class="btn btn-block btn-social btn-facebook" (click)="loginFacebook()">
+                <span class="fa fa-facebook"></span> Sign in with Facebook
+            </a>
+            <div role="seperator" class="divider"></div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input id="email" type="email" class="form-control" [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input id="password" type="password" class="form-control" [(ngModel)]="password">
+            </div>
+            <button type="button" class="btn btn-primary pull-right" (click)="login()">Login</button>
+            <a class="btn btn-primary pull-left" [routerLink]="['/signup']" routerLinkActive="true">Sign Up</a>
+        </div>
+    </li>
+</ul>

@@ -36,10 +36,6 @@ const routes: RouterConfig = [
         component: SearchComponent
     },
     {
-        path: "login",
-        component: LoginComponent
-    },
-    {
         path: "reservation",
         component: ReservationComponent
     },
