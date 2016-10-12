@@ -14,7 +14,7 @@ import { LoginComponent } from "./login.component"
     providers: [FacebookService]
 })
 export class LoginButtonComponent {
-    isVisible: boolean = false;
+    user: any;
     constructor(
         private fb: FacebookService,
         private router: Router) {
@@ -27,9 +27,12 @@ export class LoginButtonComponent {
             this.fb.init(fbParams);
             this.fb.getLoginStatus().then(
                 (loginStatus: FacebookLoginStatus) => {
-                    console.log(loginStatus);
-                    if (loginStatus.status != "connected") {
-                        this.isVisible = true;
+                    if (loginStatus.status == "connected") {
+                        this.fb.api('/me', "get").then(
+                            (response: any) => {
+                                this.user = response;
+                            }
+                        );
                     }
                 }
             );
@@ -39,11 +42,26 @@ export class LoginButtonComponent {
             this.fb.login().then(
                 (response: FacebookLoginResponse) => {
                     if (response.status == "connected") {
-                        this.isVisible = false;
-                        this.router.navigate(['/dashboard']);
+                        this.fb.api('/me', "get").then(
+                            (response: any) => {
+                                this.user = response;
+                                this.router.navigate(['/dashboard']);
+                            }
+                        );
                     }
                 },
                 (error: any) => console.log(error)
             );
+        }
+
+        logout() {
+            this.fb.logout().then(
+                (response: FacebookLoginResponse) => {
+                    this.user = null;
+                    this.router.navigate(['/home']);
+                },
+                (error: any) => console.log(error)
+            );
+            return false;
         }
 }
