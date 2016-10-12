@@ -4,15 +4,17 @@ import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { FacebookService, FacebookLoginStatus, FacebookLoginResponse, FacebookInitParams } from "ng2-facebook-sdk";
 
+import { LoginComponent } from "./login.component"
+
 @Component ({
     selector: "login-button",
     templateUrl: "app/loginComponent/login-button.component.html",
     styleUrls: ["app/loginComponent/login-button.component.css"],
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, LoginComponent],
     providers: [FacebookService]
 })
 export class LoginButtonComponent {
-    isVisible: bool = false;
+    isVisible: boolean = false;
     constructor(
         private fb: FacebookService,
         private router: Router) {
@@ -25,6 +27,7 @@ export class LoginButtonComponent {
             this.fb.init(fbParams);
             this.fb.getLoginStatus().then(
                 (loginStatus: FacebookLoginStatus) => {
+                    console.log(loginStatus);
                     if (loginStatus.status != "connected") {
                         this.isVisible = true;
                     }
