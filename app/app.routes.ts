@@ -25,7 +25,7 @@ const routes: RouterConfig = [
         path: "admin",
         component: AdminComponent,
         children: [
-            {path: '', redirectTo: 'dashboard', patchMatch: 'full'},
+            {path: '', redirectTo: 'dashboard'},
             {path: 'dashboard', component: DashboardComponent},
             {path: 'annoncements', component: AnnoncementsComponent},
             {path: 'reservation', component: ReservationComponent},
