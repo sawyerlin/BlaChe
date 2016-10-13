@@ -45,7 +45,7 @@ export class LoginButtonComponent {
                         this.fb.api('/me', "get").then(
                             (response: any) => {
                                 this.user = response;
-                                this.router.navigate(['/dashboard']);
+                                this.router.navigate(['/admin']);
                             }
                         );
                     }

@@ -1,19 +1,5 @@
 <div class="container">
     <blache-header [logo]="logo"></blache-header>
-    <ul class="nav nav-tabs">
-        <li role="presentation" [routerLinkActive]="['active']">
-            <a [routerLink]="['/dashboard']" routerLinkActive="true">Dashboard</a>
-        </li>
-        <li role="presentation" [routerLinkActive]="['active']">
-            <a [routerLink]="['/annoncements']" routerLinkActive="true">Annoncements</a>
-        </li>
-        <li role="presentation" [routerLinkActive]="['active']">
-            <a [routerLink]="['/reservation']" routerLinkActive="true">Reservation</a>
-        </li>
-        <li role="presentation" [routerLinkActive]="['active']">
-            <a [routerLink]="['/message']" routerLinkActive="true">Message</a>
-        </li>
-    </ul>
     <div>
         <router-outlet></router-outlet>
     </div>

@@ -1,9 +1,11 @@
 import { provideRouter, RouterConfig } from "@angular/router";
 
-import { AnnoncementsComponent } from "./annoncementsComponent/annoncements.component";
-import { ReservationComponent } from "./reservationComponent/reservation.component";
-import { MessageComponent } from "./messageComponent/message.component";
+import { AdminComponent } from "./adminComponent/admin.component";
 import { DashboardComponent } from "./dashboard.component";
+import { ReservationComponent } from "./reservationComponent/reservation.component";
+import { AnnoncementsComponent } from "./annoncementsComponent/annoncements.component";
+import { MessageComponent } from "./messageComponent/message.component";
+
 import { CarDetailComponent } from './annoncementsComponent/car-detail.component';
 import { HomeComponent } from './homeComponent/home.component';
 import { SearchComponent } from './searchComponent/search.component';
@@ -20,12 +22,15 @@ const routes: RouterConfig = [
         component: HomeComponent
     },
     {
-        path: "dashboard",
-        component: DashboardComponent
-    },
-    {
-        path: "annoncements",
-        component: AnnoncementsComponent
+        path: "admin",
+        component: AdminComponent,
+        children: [
+            {path: '', redirectTo: 'dashboard', patchMatch: 'full'},
+            {path: 'dashboard', component: DashboardComponent},
+            {path: 'annoncements', component: AnnoncementsComponent},
+            {path: 'reservation', component: ReservationComponent},
+            {path: 'message', component: MessageComponent},
+        ]
     },
     {
         path: "detail/:id",
@@ -34,14 +39,6 @@ const routes: RouterConfig = [
     {
         path: "search/:date",
         component: SearchComponent
-    },
-    {
-        path: "reservation",
-        component: ReservationComponent
-    },
-    {
-        path: "message",
-        component: MessageComponent
     }
 ];
 
