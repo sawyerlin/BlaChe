@@ -1,16 +1,14 @@
 import { Component } from "@angular/core";
-import { ROUTER_DIRECTIVES } from "@angular/router";
 
-import { CarService } from "./annoncementsComponent/car.service";
+import { CarService } from "./adminComponent/annoncementsComponent/car.service";
 import { SearchService } from "./searchComponent/search.service";
 import { HeaderComponent }  from "./headerComponent/header.component";
 
 @Component({
+    moduleId: module.id,
     selector: "my-app",
-    templateUrl: "app/app.component.html",
-    styleUrls: ["app/app.component.css"],
-    directives: [ROUTER_DIRECTIVES, HeaderComponent],
-    providers: [CarService, SearchService]
+    templateUrl: "app.component.html",
+    styleUrls: ["app.component.css"]
 })
 export class AppComponent {
     logo: string = "Blache";

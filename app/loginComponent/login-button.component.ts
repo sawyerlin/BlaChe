@@ -1,17 +1,15 @@
 import { Component } from "@angular/core";
 import { Router } from '@angular/router';
-import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { FacebookService, FacebookLoginStatus, FacebookLoginResponse, FacebookInitParams } from "ng2-facebook-sdk";
 
 import { LoginComponent } from "./login.component"
 
 @Component ({
+    moduleId: module.id,
     selector: "login-button",
-    templateUrl: "app/loginComponent/login-button.component.html",
-    styleUrls: ["app/loginComponent/login-button.component.css"],
-    directives: [ROUTER_DIRECTIVES, LoginComponent],
-    providers: [FacebookService]
+    templateUrl: "login-button.component.html",
+    styleUrls: ["login-button.component.css"],
 })
 export class LoginButtonComponent {
     user: any;

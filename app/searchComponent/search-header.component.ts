@@ -2,9 +2,10 @@ import { Component, Input } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
+    moduleId: module.id,
     selector: "blache-search-header",
-    templateUrl: "app/searchComponent/search-header.component.html",
-    styleUrls: ['app/searchComponent/search-header.component.css']
+    templateUrl: "search-header.component.html",
+    styleUrls: ['search-header.component.css']
 })
 export class SearchHeaderComponent {
     @Input() from: string;

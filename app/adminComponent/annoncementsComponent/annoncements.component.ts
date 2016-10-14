@@ -6,10 +6,10 @@ import { CarService } from './car.service';
 import { CarDetailComponent } from './car-detail.component';
 
 @Component({
+    moduleId: module.id,
     selector: 'blache-annoncements',
-    templateUrl: 'app/annoncementsComponent/annoncements.component.html',
-    styleUrls: ['app/annoncementsComponent/annoncements.component.css'],
-    directives: [CarDetailComponent]
+    templateUrl: 'annoncements.component.html',
+    styleUrls: ['annoncements.component.css']
 })
 export class AnnoncementsComponent implements OnInit {
     cars: Car[];

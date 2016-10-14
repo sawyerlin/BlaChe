@@ -1,11 +1,10 @@
 import { Component } from "@angular/core";
-import { ROUTER_DIRECTIVES } from "@angular/router";
 
 import { AdminHeaderComponent } from "./admin-header.component"
 
 @Component({
+    moduleId: module.id,
     selector: "blache-admin",
-    templateUrl: "app/adminComponent/admin.component.html",
-    directives: [ROUTER_DIRECTIVES, AdminHeaderComponent]
+    templateUrl: "admin.component.html"
 })
 export class AdminComponent {}

@@ -1,11 +1,10 @@
 import { Component, Input, EventEmitter, Output } from "@angular/core";
 import { Router } from '@angular/router';
-import { ROUTER_DIRECTIVES } from "@angular/router";
 
 @Component ({
+    moduleId: module.id,
     selector: "blache-login",
-    templateUrl: "app/loginComponent/login.component.html",
-    directives: [ROUTER_DIRECTIVES]
+    templateUrl: "login.component.html",
 })
 export class LoginComponent {
     @Input() email: string;

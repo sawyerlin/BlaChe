@@ -7,9 +7,9 @@ import { SearchItemComponent } from "./search-item.component";
 import { SearchHeaderComponent } from "./search-header.component";
 
 @Component({
+    moduleId: module.id,
     selector: "blache-search",
-    templateUrl: "app/searchComponent/search.component.html",
-    directives: [SearchItemComponent, SearchHeaderComponent]
+    templateUrl: "search.component.html"
 })
 export class SearchComponent implements OnInit {
     sub: any;

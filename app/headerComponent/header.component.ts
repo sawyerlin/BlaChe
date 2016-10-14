@@ -1,11 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ROUTER_DIRECTIVES } from "@angular/router";
 import { LoginButtonComponent } from "../loginComponent/login-button.component"
 
 @Component({
+    moduleId: module.id,
     selector: "blache-header",
-    templateUrl: "app/headerComponent/header.component.html",
-    directives: [ROUTER_DIRECTIVES, LoginButtonComponent]
+    templateUrl: "header.component.html"
 })
 export class HeaderComponent implements OnInit {
     @Input() logo: string;

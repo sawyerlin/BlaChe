@@ -3,9 +3,9 @@ import { Component } from "@angular/core";
 import { SearchHeaderComponent } from "../searchComponent/search-header.component";
 
 @Component({
+    moduleId: module.id,
     selector: "blache-home",
-    templateUrl: "app/homeComponent/home.component.html",
-    styleUrls: ["app/homeComponent/home.component.css"],
-    directives: [SearchHeaderComponent]
+    templateUrl: "home.component.html",
+    styleUrls: ["home.component.css"]
 })
 export class HomeComponent {}

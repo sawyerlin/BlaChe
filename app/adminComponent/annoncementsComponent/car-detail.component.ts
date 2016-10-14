@@ -5,9 +5,10 @@ import { Car } from './car';
 import { CarService } from './car.service';
 
 @Component ({
+    moduleId: module.id,
     selector: 'my-car-detail',
-    templateUrl: 'app/annoncementsComponent/car-detail.component.html',
-    styleUrls: ['app/annoncementsComponent/car-detail.component.css']
+    templateUrl: 'car-detail.component.html',
+    styleUrls: ['car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit, OnDestroy {
     @Input() car: Car;
