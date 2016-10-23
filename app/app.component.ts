@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 
 import { CarService } from "./adminComponent/annoncementsComponent/car.service";
 import { SearchService } from "./searchComponent/search.service";
-import { HeaderComponent }  from "./headerComponent/header.component";
 
 @Component({
     moduleId: module.id,
